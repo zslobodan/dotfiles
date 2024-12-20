@@ -1,0 +1,104 @@
+set incsearch
+set ignorecase
+set smartcase
+set number relativenumber
+set showmode
+set hlsearch
+set visualbell
+set scrolloff=10
+
+set multiple-cursors
+set highlightedyank
+set easymotion
+set nerdtree
+
+let mapleader = " "
+
+inoremap jj <Esc>
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nmap <A-j> :m .+1<cr>==
+nmap <A-k> :m .-2<cr>==
+imap <A-j> <Esc>:m .+1<cr>==gi
+imap <A-k> <Esc>:m .-2<cr>==gi
+vmap <A-j> :m '>+1<cr>gv=gv
+vmap <A-k> :m '<-2<cr>gv=gv
+
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap <S-w> <Action>(CloseEditor)
+
+nmap <silent> <Esc> :nohlsearch<CR><Esc>
+
+map gcc <Action>(CommentByLineComment)
+
+map <leader>e :NERDTreeToggle<CR>
+
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+
+vmap < <gv
+vmap > >gv
+
+map ss <C-W>s
+map sv <C-W>v
+map sx <C-W>c
+
+" Just use Shift-Shift to search everywhere and everything
+"map <leader>f <Action>(SearchEverywhere)
+map <leader>if <Action>(Find)
+map <leader>fg <Action>(FindInPath)
+map <leader>ff <Action>(GotoFile)
+
+map <C-S> <Action>(Switcher)
+
+map <leader>dd <Action>(ToggleDistractionFreeMode)
+map <leader>dz <Action>(ToggleZenMode)
+map <leader>df <Action>(ToggleFullScreen)
+
+map <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>gD <Action>(GotoDeclaration)
+nmap <leader>gt <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap K <Action>(ShowHoverInfo)
+nmap <leader>gu <Action>(ShowUsages)
+map <leader>rn <Action>(RenameElement)
+
+map <leader>rr <Action>(Run)
+map <leader>rj <Action>(RunClass)
+
+map <leader>dv <Action>(ToggleLineBreakpoint)
+map <leader>ds <Action>(Debug)
+map <leader>dt <Action>(Stop)
+map <leader>dd <Action>(StepOver)
+map <leader>df <Action>(StepInto)
+map <leader>dg <Action>(StepOut)
+
+nmap <leader>te <Action>(ActivateTerminalToolWindow)
+nmap <leader>du <Action>(ActivateDebugToolWindow)
+nmap <leader>xq <Action>(ActivateProblemsViewToolWindow)
+nmap <S-Esc> <Action>(HideActiveWindow)
+
+sethandler <C-A> a:ide
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-F> a:ide
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-J> a:vim
+sethandler <A-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-N> a:vim
+sethandler <C-P> a:vim
+sethandler <C-S> a:ide
+sethandler <C-U> a:vim
+sethandler <C-V> a:ide
+sethandler <C-W> a:ide
